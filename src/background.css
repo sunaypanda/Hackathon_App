@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.background {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.backgroundImage {
+  position: fixed;
+  bottom: 5vw;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  /* background-color: rgb(0, 0, 0); */
+  background-image: url('/public/sky.png');
+  transform: scale(1.2);
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+
+.groundBackground1 {
+  position: fixed;
+  bottom: -4vw;
+  left: -31vw;
+  width: 87vw;
+  height: 11vw;
+  background-image: url('/public/ground.jpg'); 
+  background-size: cover; 
+  transform: scale(0.3);
+  z-index: 4;
+  animation-timing-function: ease-in;
+}
+
+.groundBackground2 {
+  position: fixed;
+  bottom: -4vw;
+  left: -5vw;
+  width: 86vw;
+  height: 11vw;
+  background-image: url('/public/ground.jpg'); 
+  background-size: cover; 
+  transform: scale(0.3);
+  z-index: 3;
+  animation-timing-function: ease-out;
+}
+
+.groundBackground3 {
+  position: fixed;
+  bottom: -4vw;
+  left: 21vw;
+  width: 85vw;
+  height: 11vw;
+  background-image: url('/public/ground.jpg'); 
+  background-size: cover; 
+  transform: scale(0.3);
+  z-index: 2;
+  animation-timing-function: ease-in;
+}
+
+.groundBackground4 {
+  position: fixed;
+  bottom: -4vw;
+  left: 46vw;
+  width: 85vw;
+  height: 11vw;
+  background-image: url('/public/ground.jpg'); 
+  background-size: cover; 
+  transform: scale(0.3);
+  z-index: 1;
+  animation-timing-function: ease-in;
+}
+
+
+@keyframes moveToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* .groundBackground1,
+.groundBackground2,
+.groundBackground3,
+.groundBackground4
+{
+  animation: moveToLeft 5s linear infinite;
+}  */
+
+@keyframes fadeOutEgg {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.egg {
+  position: fixed;
+  bottom: 30px;
+  left: 40px;
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
+  z-index: 9;
+  background-image: url('/public/egg.gif');
+  opacity: 1;
+  animation: fadeOutEgg 0s ease-in-out forwards;
+  animation-delay: 5.5s;
+}
+
+.dinosaur {
+  position: absolute;
+  bottom: 3vw;
+  left: 5%;
+  /* transform: translateX(-50%); */
+  width: 200px;
+  height: 200px;
+  background-image: url('/public/dinoGif.gif');
+  background-size: 200px;
+  transform: scaleX(1);
+  z-index: 5;
+  opacity: 0;
+  animation: fadeIn 0s ease-in-out forwards, jumpDino 1s ease-in-out, run 5s linear forwards;
+  animation-delay: 5.5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.dinosaur.jump {
+    animation: jumpDino 1s ease-in-out forwards;
+  }
+  
+/* 
+@keyframes jumpDino {
+  0% { bottom: 50px; } 
+  50% { bottom: 200px; }
+  100% { bottom: 30px; } 
+} */
+
+@keyframes jumperDino {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .dinosaur {
+    transition: transform 0.5s ease-in-out;
+    /* Make sure the initial state of the dinosaur is visible */
+    opacity: 1; 
+  }
+  
+  .dinosaur.jump {
+    animation: jumperDino 1s ease-in-out;
+  }
+  
+
+@keyframes run {
+  0% {left: 40px; opacity: 1;}
+  100% { left: 40.5%; opacity: 1;}
+}
+
+.cloudFast {
+  position: fixed;
+  left: 0vw;
+  bottom: 40vw;
+  width: 100vw;
+  height: 98vw;
+  background-image: url('/public/cloudFast.gif'); 
+  transform: scaleX(-1);
+  z-index: -1;
+  /* animation: fadeOutCloudsFast 2s ease-in-out forwards; */
+  /* animation-delay: 8.5s; */
+}
+
+/* @keyframes fadeOutCloudsFast{
+  0%{opacity: 1}
+  100%{opacity: 1}
+} */
+
+/* .cloudSlow {
+  position: fixed;
+  left: 0vw;
+  bottom: 40vw;
+  width: 100vw;
+  height: 98vw;
+  background-image: url('/public/cloudSlow.gif'); 
+  transform: scaleX(-1);
+  z-index: -1;
+  opacity:  0;
+  animation: fadeInCloudsSlow 2s ease-in-out forwards;
+  animation-delay: 8.5s;
+}
+
+@keyframes fadeInCloudsSlow{
+  0%{opacity: 0}
+  100%{opacity: 1}
+}  */
+
+
+@keyframes pop {
+  0% { transform: scale(1)};
+  100% { transform: scale(1.4) };
+}
+
+
+.guide-container {
+    position: absolute;
+    text-align: center;
+    height: 35vh;
+    left: 68vw;
+    padding-top: 0;
+    text-align: center;
+    top: 10vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top:2vh;
+    border-radius: 20px;
+    margin: 20px;
+    margin-bottom: 90%;
+    width: 15vw;
+    opacity: 80%;
+    background-color: rgb(220, 191, 147);
+    border: 3px solid;
+  }
+  .guide-container h1 {
+    padding-top: 0;
+    font-size: 20px;
+    font-family: 'Press Start 2P', system-ui;
+    color: black; /* Darker text color for contrast */
+  }
+  .guide-container p {
+    padding-top: 0;
+    font-size: 15px;
+    font-family: 'Press Start 2P', system-ui;
+    color: black; /* Lighter text color for regular paragraphs */
+  }
+
+  /* .sign{
+    position: absolute;
+    left: 11.5vw;
+    top: 12vh;
+    background-image: url('/public/sign2.png');
+    height: 325px;
+    width: 275px;
+    border-radius: 20px;
+    background-size: 32vh;
+    background-color: rgb(220, 191, 147);
+    opacity: 80%;
+    z-index: 1000;
+    border: 3px solid;
+  } */
+
+  .sign{
+    position: absolute;
+    left: 12vw;
+    top: 12vh;
+    background-image: url('/public/sign2.png');
+    height: 315px;
+    width: 270px;
+    border-radius: 20px;
+    background-size: 32vh;
+    background-color: rgb(220, 191, 147);
+    opacity: 80%;
+    z-index: 1000;
+    border: 3px solid;
+  }
+
+  .legend{
+    position: absolute;
+    font-family: 'Press Start 2P', system-ui;
+    text-align: center;
+    font-size: 18px;
+    writing-mode: vertical-lr;
+    transform: rotate(270deg);
+    height: 35vh;
+    left: 0.75vw;
+    text-align: center;
+    top: 14vh;
+    padding-left: 5vh;
+    padding-right: 0vh;
+    padding-top:0;
+    border-radius: 20px;
+    margin: 20px;
+    margin-bottom: 90%;
+    width: 15vw;
+    opacity: 80%;
+  }
+
