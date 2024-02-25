@@ -137,7 +137,7 @@ import "./App.css";
 
 const WebcamCapture = () => {
   const webcamRef = useRef(null);
-  const [predictedText, setPredictedText] = useState("x");
+  const [predictedText, setPredictedText] = useState("");
   const [isSendingRequests, setIsSendingRequests] = useState(false);
   const [requestStatus, setRequestStatus] = useState("Stopped");
   const timerIdRef = useRef(null);
@@ -154,7 +154,7 @@ const WebcamCapture = () => {
           method: "POST",
           url: "https://detect.roboflow.com/american-sign-language-letters/6",
           params: {
-            api_key: "wOW2ZQ8RhA8ydGNR6IkB",
+            api_key: "5eGf3j1XKmN3V7F03yru",
           },
           data: imageSrc.replace(/^data:image\/(png|jpg);base64,/, ""),
           headers: {
@@ -252,7 +252,7 @@ const WebcamCapture = () => {
             />
           </div>
           <div className="prediction">
-            <p>{predictedText}</p> {/* Display current predicted text */}
+            <p>{predictedText}</p>
           </div>
         </div>
       </div>

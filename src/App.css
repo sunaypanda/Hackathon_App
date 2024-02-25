@@ -46,16 +46,16 @@
 
 .input-container {
   font-family:'Press Start 2P', system-ui;
-  font-size: 12px;
+  font-size: 13px;
   position: fixed;
   top: 52.5vh;
   right: 32.5vw;
   width: auto;
-  padding-top: 1px;
+  padding-top: 3px;
   padding-bottom: 1px;
   padding-left: 5px;
   padding-right: 5px;
-  height: 30px;
+  height: 15px;
   border-radius: 12px;
   border: 3px solid;
   text-align: center;
@@ -63,19 +63,19 @@
 
 .prediction,
 .status {
-  margin-top: 5px; 
+  margin-top: 0px; 
 }
 
 .prediction{
   position: fixed;
-  left: 50vw;
+  left: 49vw;
   width: auto;
-  font-size: 45px;
+  height: 30px;
+  font-size: 50px;
   font-family: 'Press Start 2P', system-ui;
   color: white;
-  top: 70vh;
-  padding: 5px;
-  border: 3px solid;
+  top: 67vh;
+  padding: px;
 }
 
 .predict_box{
@@ -92,10 +92,6 @@
   text-align: center;
 }
 
-.prediction_container{
-  display: flex;
-  flex-direction: column;
-}
 
 
 
